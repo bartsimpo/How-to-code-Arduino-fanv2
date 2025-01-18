@@ -1,0 +1,30 @@
+const int joystickButtonPin = 2
+const int fanCorntrolPin = 9;
+
+bool fanState = false;
+bool lastButtonState = HIGH;
+
+Void setup() {
+  pinmode(joystickButtonPin, INOUT_PULLUP);
+  pinMode(fanControl, OUTPUT);
+  digitalWrite(fanControlPin, Low);
+}
+
+void loop() {
+  int buttonState = digitalRead(joystickButtonPin);
+
+
+  if (buttonState == LOW && lastbuttonState == HIGH ) { 
+    fanState = !fanState; toggle fan state
+
+
+    if (fanState) {
+      digitalWrite(fanControlPin, HIGH) Turns fan on
+    } else {
+      digitalWrite(fanControlPin LOW) Turns Fan off
+    }
+
+
+    save the current button state for next loop iteration
+    lastButtonState = buttonstate;
+}
